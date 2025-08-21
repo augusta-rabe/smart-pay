@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Augusta Rabemananjara">
+  <title>SmartPay – Calcul des monnaies Malagasy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="assets/icon.png" alt="Logo SmartPay" style="width: 55px; height: 55px; border-radius: 8px;">
+        </div>
+        <div class="brand-text">
+          <h1>SmartPay</h1>
+          <p>Calculez les billets nécessaires pour une somme en Ariary (MGA).</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="field-group">
+        <label for="amount">Montant (Ar)</label>
+        <div class="amount-input">
+          <input id="amount" type="number" min="0" step="100" placeholder="Ex: 45000" />
+          <button id="btn-example" class="link">Exemple 45 000</button>
+        </div>
+        <small>Le plus petit numéraire est 100Ar. Le montant doit être un multiple de 100.</small>
+      </div>
+
+      <div class="field-group">
+        <label class="checkbox">
+          <input id="use-custom" type="checkbox" />
+          <span>Sélection des coupures disponibles</span>
+        </label>
+        <div id="custom-denoms" class="denoms-grid hidden" aria-label="Sélection des coupures">
+          <label class="checkbox"><input type="checkbox" data-denom="20000" checked /> 20 000 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="10000" checked /> 10 000 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="5000" checked /> 5 000 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="2000" checked /> 2 000 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="1000" checked /> 1 000 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="500" checked /> 500 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="200" checked /> 200 Ar</label>
+          <label class="checkbox"><input type="checkbox" data-denom="100" checked /> 100 Ar</label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btn-calc" class="primary">Calculer</button>
+        <button id="btn-clear" class="ghost">Effacer</button>
+      </div>
+    </section>
+
+    <section class="card results">
+      <h2>Résultats</h2>
+      <div id="summary" class="summary"></div>
+      <div id="combinations" class="combinations"></div>
+    </section>
+
+    <footer class="footer">
+      <p>Billets pris en charge : 20 000, 10 000, 5 000, 2 000, 1 000, 500, 200, 100 Ar.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html> 

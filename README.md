@@ -1,6 +1,8 @@
-<img src="./assets/icon.png" alt="SmartPay" width="40" height="40" />
-
-## SmartPay
+## 
+<p align="left" style="display: flex; align-items: center; gap: 12px;">
+  <img src="./assets/icon.png" alt="SmartPay" width="50" height="50" style="vertical-align: middle; margin-right: 10px;" />
+  <span style="font-size: 1.7em; font-weight: bold; vertical-align: middle;">SmartPay</span>
+</p>
 
 Application locale pour comptable permettant de calculer rapidement la combinaison minimale de billets Malagasy (MGA) pour un montant donné, avec la possibilité d’exclure précisément les coupures non disponibles.
 

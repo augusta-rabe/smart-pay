@@ -62,7 +62,7 @@ small { color: var(--muted-2); }
 .amount-input input {
   flex: 1;
   padding: 12px 14px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--muted-2);
   border-radius: 12px;
   font-size: 16px;
   background: #fff;
@@ -79,6 +79,13 @@ small { color: var(--muted-2); }
 .checkbox input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); }
 .denoms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px 12px; margin-top: 8px; }
 .denoms-grid .checkbox { margin: 0; }
+
+.denoms-actions { 
+  grid-column: 1 / -1; 
+  display: flex; 
+  gap: 8px; 
+  justify-content: center; 
+}
 
 /* Actions / boutons */
 .actions { display: flex; gap: 10px; margin-top: 18px; }
@@ -109,6 +116,21 @@ button.link {
   background: transparent; border: none; color: #0369a1; font-weight: 600;
 }
 button.link:hover { text-decoration: underline; }
+
+button.small {
+  background: transparent;
+  border: 1px solid var(--accent-2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  transition: all .2s ease;
+}
+button.small:hover { 
+  background: rgba(14,165,233,.05); 
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
 /* Résultats */
 .results h2 { margin: 0 0 12px 0; }

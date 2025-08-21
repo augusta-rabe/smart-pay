@@ -1,3 +1,5 @@
+<img src="./assets/icon.png" alt="SmartPay" width="40" height="40" />
+
 ## SmartPay
 
 Application locale pour comptable permettant de calculer rapidement la combinaison minimale de billets Malagasy (MGA) pour un montant donné, avec la possibilité d’exclure précisément les coupures non disponibles.
@@ -59,10 +61,9 @@ Exemple rapide:
 - Navigation clavier: le champ montant accepte Entrée pour lancer le calcul.
 
 ## Pistes d’amélioration
-- **Tout cocher / Tout décocher** pour accélérer la sélection des coupures.
+- **Mode sombre** pour un meilleur confort visuel la nuit.
 - **Historique** des derniers montants saisis.
 - **Export** du résultat (PDF/PNG ou impression).
 
 ---
-![alt](./assets/icon.png)
 Made with ❤️ pour faciliter les paiements en Ariary (MGA). 

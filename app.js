@@ -9,6 +9,8 @@
   const btnClear = document.getElementById('btn-clear');
   const useCustom = document.getElementById('use-custom');
   const customDenoms = document.getElementById('custom-denoms');
+  const btnCheckAll = document.getElementById('btn-check-all');
+  const btnUncheckAll = document.getElementById('btn-uncheck-all');
   const summary = document.getElementById('summary');
   const combinationsEl = document.getElementById('combinations');
 
@@ -61,7 +63,7 @@
     for (const [denom, count] of entries) {
       const line = document.createElement('div');
       line.className = 'line';
-      line.innerHTML = `<span> <span style="font-weight:bold;">${count}</span> × ${new Intl.NumberFormat('fr-FR').format(denom)} Ar</span><span>${new Intl.NumberFormat('fr-FR').format(count * denom)} Ar</span>`;
+      line.innerHTML = `<span>${count} × ${new Intl.NumberFormat('fr-FR').format(denom)} Ar</span><span>${new Intl.NumberFormat('fr-FR').format(count * denom)} Ar</span>`;
       wrapper.appendChild(line);
     }
     const totalLine = document.createElement('div');
@@ -155,12 +157,29 @@
     summary.textContent = '';
   }
 
+  function onCheckAll() {
+    const inputs = customDenoms.querySelectorAll('input[type="checkbox"][data-denom]');
+    inputs.forEach(input => input.checked = true);
+  }
+
+  function onUncheckAll() {
+    const inputs = customDenoms.querySelectorAll('input[type="checkbox"][data-denom]');
+    inputs.forEach(input => input.checked = false);
+  }
+
   function init() {
     btnCalc.addEventListener('click', onCalc);
     btnClear.addEventListener('click', onClear);
     btnExample.addEventListener('click', () => {
       amountInput.value = '45000';
     });
+
+    if (btnCheckAll) {
+      btnCheckAll.addEventListener('click', onCheckAll);
+    }
+    if (btnUncheckAll) {
+      btnUncheckAll.addEventListener('click', onUncheckAll);
+    }
 
     amountInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') onCalc();

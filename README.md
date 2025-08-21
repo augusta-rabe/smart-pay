@@ -1,15 +1,15 @@
 ## SmartPay
 
-Application locale pour comptable permettant de calculer rapidement la combinaison minimale de billets/pièces Malagasy (MGA) pour un montant donné, avec la possibilité d’exclure précisément les coupures non disponibles.
+Application locale pour comptable permettant de calculer rapidement la combinaison minimale de billets Malagasy (MGA) pour un montant donné, avec la possibilité d’exclure précisément les coupures non disponibles.
 
 ### Fonctionnalités
-- **Calcul minimal**: renvoie toujours le nombre minimal de billets/pièces pour atteindre le montant (algorithme optimal).
+- **Calcul minimal**: renvoie toujours le nombre minimal de billets pour atteindre le montant (algorithme optimal).
 - **Sélection précise des coupures**: cochez/décochez les billets que vous avez réellement (20 000 → 100 Ar).
 - **Rapide et local**: fonctionne entièrement dans le navigateur, sans serveur ni installation.
 - **Accessibilité et clavier**: champ montant focusable, validation claire, touche Entrée pour lancer le calcul.
 
 ### Coupures prises en charge
-| Billets/Pièces |
+| Billets |
 |---|
 | 20 000 Ar |
 | 10 000 Ar |
@@ -29,9 +29,9 @@ start index.html
 
 ## Utilisation
 1. Entrez un montant en Ariary (multiple de 100).
-2. (Optionnel) Cochez « Sélection précise des coupures » et décochez les billets indisponibles.
+2. (Optionnel) Cochez « Sélection précise des coupures disponibles » et décochez les billets indisponibles.
 3. Cliquez sur « Calculer » ou appuyez sur Entrée.
-4. Le résultat affiche le détail par coupure et le total de billets/pièces utilisés.
+4. Le résultat affiche le détail par coupure et le total de billets utilisés.
 
 Exemple rapide:
 - Montant: `45 000 Ar`
@@ -64,4 +64,5 @@ Exemple rapide:
 - **Export** du résultat (PDF/PNG ou impression).
 
 ---
+![alt](./assets/icon.png)
 Made with ❤️ pour faciliter les paiements en Ariary (MGA). 

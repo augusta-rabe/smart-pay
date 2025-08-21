@@ -61,7 +61,7 @@
     for (const [denom, count] of entries) {
       const line = document.createElement('div');
       line.className = 'line';
-      line.innerHTML = `<span>${count} × ${new Intl.NumberFormat('fr-FR').format(denom)} Ar</span><span>${new Intl.NumberFormat('fr-FR').format(count * denom)} Ar</span>`;
+      line.innerHTML = `<span> <span style="font-weight:bold;">${count}</span> × ${new Intl.NumberFormat('fr-FR').format(denom)} Ar</span><span>${new Intl.NumberFormat('fr-FR').format(count * denom)} Ar</span>`;
       wrapper.appendChild(line);
     }
     const totalLine = document.createElement('div');

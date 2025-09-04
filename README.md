@@ -20,7 +20,7 @@ Application locale pour comptable permettant de calculer rapidement la combinais
 | 200 Ar |
 | 100 Ar |
 
-## Prise en main
+## Prise en main (Web)
 - Ouvrez simplement le fichier `index.html` dans votre navigateur.
 - Sur Windows, vous pouvez aussi lancer:
 ```bash
@@ -38,10 +38,35 @@ Exemple rapide:
 - Coupures: toutes disponibles → résultat minimal typique: `2 × 20 000 Ar` + `1 × 5 000 Ar`.
 - Si vous décochez `10 000` et `5 000`, SmartPay recomposera avec `2 000`, `1 000`, `500`, etc., toujours au minimum de billets.
 
+## Mode Desktop (Windows via Electron)
+SmartPay peut être emballé en application de bureau Windows.
+
+### Prérequis
+- Node.js 18+
+- npm 9+
+
+### Installation des dépendances
+```bash
+npm install
+```
+
+### Lancement en mode développement
+```bash
+npm run dev
+```
+Cela ouvre une fenêtre Electron chargeant `index.html`.
+
+### Génération d’un installateur Windows (.exe)
+```bash
+npm run build:win
+```
+- Le binaire sera disponible dans `dist/`.
+- L’icône utilisée est `assets/icon.ico`. Modifiez-la si besoin.
+
 ## Détails techniques
 - **Algorithme**: Programmation dynamique (problème du rendu de monnaie) pour garantir la solution minimale, même si les coupures sont restreintes de manière arbitraire. Complexité ~ O(N × M), avec N = nombre de coupures actives et M = montant/100.
 - **Validation**: le montant doit être un multiple de `100 Ar` (plus petite unité gérée).
-- **Technos**: HTML + CSS + JavaScript pur. Aucune dépendance externe.
+- **Technos**: HTML + CSS + JavaScript pur. Aucune dépendance externe côté web. Côté desktop: Electron + electron-builder pour le packaging.
 
 ## Personnalisation
 - **Modifier les coupures**: dans `app.js`, ajustez le tableau `DENOMINATIONS` si nécessaire.
@@ -52,6 +77,8 @@ Exemple rapide:
 - `index.html` — Interface de l’application.
 - `styles.css` — Styles et mise en page (thème, cartes, grilles, boutons, cases à cocher).
 - `app.js` — Logique (validation, sélection des coupures, algorithme DP, rendu des résultats).
+- `electron/main.js` — Entrée d’application Electron (mode desktop).
+- `package.json` — Scripts npm et configuration de build Electron.
 - `assets/` — Icônes et ressources (optionnel).
 
 ## Accessibilité
@@ -62,6 +89,7 @@ Exemple rapide:
 - **Mode sombre** pour un meilleur confort visuel la nuit.
 - **Historique** des derniers montants saisis.
 - **Export** du résultat (PDF/PNG ou impression).
+- **Prise en charge** d’autres devises et coupures personnalisées.
 
 ---
 Made with ❤️ pour faciliter les paiements en Ariary (MGA). 

@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Electron
+/dist/
+build/
+out/
+*.asar
+
+# Systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Tests et rapports
+coverage/
+*.lcov
+
+# Divers
+.env
+.env.local
+.env.*.local
+
+# Electron-builder
+*.exe
+*.dmg
+*.app
+*.msi
+*.deb
+*.snap
+*.rpm
+
+# Logs
+logs/
+*.log
